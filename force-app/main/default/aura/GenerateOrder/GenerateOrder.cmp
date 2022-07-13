@@ -1,0 +1,7 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="apxGenerateOrderController" >
+	<h1>Are you sure, you want to generate order for this quote</h1>
+    <br></br>
+    <aura:attribute name="recordId" type="id"/> 
+    <lightning:button variant="brand" label="Generate" onclick="{! c.GenerateOrderBtnClick }" />
+    <br></br>
+</aura:component>

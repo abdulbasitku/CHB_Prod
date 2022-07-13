@@ -1,0 +1,7 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="apxCreateDefaultQuotesController" >
+	<h1>Are you sure, you want to create default standard quotes?</h1>
+    <br></br>
+    <aura:attribute name="recordId" type="id"/> 
+    <lightning:button variant="brand" label="Create" onclick="{! c.CreateDefaultQuotesBtnClick }" />
+    <br></br>
+</aura:component>

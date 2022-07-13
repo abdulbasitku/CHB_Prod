@@ -1,0 +1,45 @@
+<AURA:COMPONENT  CONTROLLER="apxAssociateCompetitorController" IMPLEMENTS="force:lightningQuickActionWithoutHeader,FORCE:APPHOSTABLE,FLEXIPAGE:AVAILABLEFORALLPAGETYPES,FORCE:HASRECORDID" ACCESS="GLOBAL">
+    <aura:attribute name="oppId" type="Id"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+  
+    <aura:attribute name="Account" type="List"/>
+            
+    <div class="slds-m-around_xx-large" style='margin:0px !important'>
+        
+        <!--Contact List Table-->
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer" role="grid">      
+            <thead>  
+                <tr class="slds-text-title--caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Select">Select</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Name">Name</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>        
+                <aura:iteration items="{!v.Account}" var="acct">
+                    <tr>
+                        <th>
+                            <label class="slds-checkbox">
+                                <ui:inputCheckbox aura:id="checkAccount" value="" text="{!acct.Id}"/>
+                                <span class="slds-checkbox--faux" />
+                                <span class="slds-form-element__label"></span>
+                            </label>
+                        </th>
+                        <td>
+                            <div class="slds-truncate" title="{!acct.Name}">{!acct.Name}</div>
+                        </td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+        
+        <div class="slds-modal__footer">            
+            <lightning:button label="Submit" class="slds-button_brand" onclick="{!c.submitBtnClick }"  />
+            <lightning:button label="Cancel" class="slds-button slds-button--neutral" onclick="{!c.cancelBtnClick }"/>
+        </div>
+    </div>
+    
+</AURA:COMPONENT>
